@@ -7,6 +7,26 @@
 
 This repository contains resources to learn Low Level Design (LLD) / Object Oriented Design (OOD) and prepare for interviews. It covers OOP fundamentals, design patterns, UML, concurrency and commonly asked interview questions.
 
+## ▶️ Running the Java Solutions Locally (Windows / PowerShell)
+
+Java code lives in `solutions/java/src`, one package per design. Compile and run **one design at a time**:
+
+```powershell
+git clone https://github.com/saurabh-1907/awesome-low-level-design.git
+cd awesome-low-level-design\solutions\java\src
+
+javac -d ..\out (Get-ChildItem parkinglot -Recurse -Filter *.java).FullName
+java -cp ..\out parkinglot.ParkingLotDemo
+```
+
+For another design, swap the folder and the demo class, e.g. `elevatorsystem` → `elevatorsystem.ElevatorSystemDemo`.
+
+Notes:
+- `mvn` and `LLDRunner.java` don't work as-is (the pom expects `src/main/java`; LLDRunner references demo classes that don't exist).
+- These demos only have `run()`, no `main`: airlinemanagementsystem, carrentalsystem, chessgame, concertticketbookingsystem, lrucache, votingsystem. Add `public static void main(String[] args) { run(); }` to the Demo class first.
+- These currently don't compile: coffeevendingmachine, digitalwalletservice, onlinelearningplatform, onlinestockbrokeragesystem, restaurantmanagementsystem.
+- IntelliJ: open `solutions/java`, mark `src` as **Sources Root**, mark the broken folders above as **Excluded**, then click ▶ next to `main` in any `*Demo.java`.
+
 ## 🏁 Start Here
 - [How to Learn LLD](https://algomaster.io/learn/lld/how-to-learn-lld)
 - [15 Must-Know OOP Concepts](https://algomaster.io/learn/lld/15-must-know-oop-concepts)
